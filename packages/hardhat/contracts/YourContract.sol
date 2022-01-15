@@ -22,6 +22,14 @@ contract HoloPunk is ERC721, ERC721Enumerable, ERC721URIStorage, ERC721Burnable,
         _setTokenURI(tokenId, uri);
     }
 
+    function mintWrap(address to, uint256 punkTokenId) public {
+        // TODO track the CryptoPunks contract address in an onlyOwner getter/setter
+        // TODO check that sender is the owner of this punk
+        // TODO set uri to json on ipfs which has image field pointing to generated image uri
+        // safeMint(to, tokenUri);
+        safeMint(to, "");
+    }
+
     // The following functions are overrides required by Solidity.
 
     function _beforeTokenTransfer(address from, address to, uint256 tokenId)
