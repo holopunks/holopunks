@@ -321,12 +321,13 @@ function App(props) {
             purpose={purpose}
           />
         </Route>
-        <Route path="/mainnetwow">
+        <Route path="/mainnetbayc">
           <Contract
-            name="WOW"
-            customContract={mainnetContracts && mainnetContracts.contracts && mainnetContracts.contracts.WOW}
+            name="BAYC"
+            customContract={mainnetContracts && mainnetContracts.contracts && mainnetContracts.contracts.BAYC}
             signer={userSigner}
-            provider={mainnetProvider}
+            //provider={mainnetProvider}
+            provider={localProvider}
             address={address}
             blockExplorer="https://etherscan.io/"
             contractConfig={contractConfig}
