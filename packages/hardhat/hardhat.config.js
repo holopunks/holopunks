@@ -72,6 +72,13 @@ module.exports = {
       
       */
     },
+    hardhat: {
+      forking: {
+        url: `https://eth-mainnet.alchemyapi.io/v2/${process.env.MAINNET_ALCHEMY_KEY}`,
+        blockNumber: 14014000,
+        // initialDate: '2022-01-01T00:00:00.398Z'
+      },
+    },
 
     // rinkeby: {
     //   url: `https://rinkeby.infura.io/v3/${process.env.RINKEBY_INFURA_KEY}`,

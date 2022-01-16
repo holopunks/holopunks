@@ -321,6 +321,18 @@ function App(props) {
             purpose={purpose}
           />
         </Route>
+        <Route path="/mainnetwow">
+          <Contract
+            name="WOW"
+            customContract={mainnetContracts && mainnetContracts.contracts && mainnetContracts.contracts.WOW}
+            signer={userSigner}
+            provider={mainnetProvider}
+            address={address}
+            blockExplorer="https://etherscan.io/"
+            contractConfig={contractConfig}
+            chainId={1}
+          />
+        </Route>
         <Route path="/mainnetdai">
           <Contract
             name="DAI"

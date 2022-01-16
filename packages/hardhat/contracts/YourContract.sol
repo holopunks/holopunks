@@ -12,6 +12,7 @@ contract HoloPunk is ERC721, ERC721Enumerable, ERC721URIStorage, ERC721Burnable,
     using Counters for Counters.Counter;
 
     Counters.Counter private _tokenIdCounter;
+    ERC721 public wowToken = ERC721(0xe785E82358879F061BC3dcAC6f0444462D4b5330);
 
     constructor() ERC721("HoloPunk", "HPUNK") {}
 
@@ -27,6 +28,8 @@ contract HoloPunk is ERC721, ERC721Enumerable, ERC721URIStorage, ERC721Burnable,
         // TODO check that sender is the owner of this punk
         // TODO set uri to json on ipfs which has image field pointing to generated image uri
         // safeMint(to, tokenUri);
+
+        require(msg.sender == wowToken.ownerOf(punkTokenId), "You do not own this woman");
         safeMint(to, "");
     }
 
